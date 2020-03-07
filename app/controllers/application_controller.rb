@@ -38,6 +38,12 @@ class ApplicationController < Sinatra::Base
     erb :balance
   end
 
+  post '/withdraw' do
+    @user = User.find(session[:user_id])
+    @withdraw = params[:withdraw].to_i
+    erb :balance
+  end
+
 
   get "/login" do
     erb :login
