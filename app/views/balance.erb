@@ -1,5 +1,5 @@
 <h1>Your New Balance</h2>
-<%if @deposit > 0%>
+<%if @deposit >= 0%>
 <%@new = @user.balance.to_i + @deposit%>
   $<%=@new%>
 <%elsif @user.balance >= @withdraw%>
