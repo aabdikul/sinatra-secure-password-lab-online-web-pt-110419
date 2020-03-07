@@ -1,3 +1,10 @@
-<%@new = @user.balance.to_i + @deposit%>
 <h1>Your New Balance</h2>
+<%if @deposit > 0%>
+<%@new = @user.balance.to_i + @deposit%>
   $<%=@new%>
+<%elsif @user.balance >= @withdraw%>
+<%@newer = @user.balance.to_i - @withdraw%>
+  $<%=@newer%>
+<%elsif @user.balance < @withdraw%>
+  This action cannot be performed.
+  <%end%>
